@@ -4,13 +4,14 @@ let palabrasParesModificadas = modificaPares(palabras, elemento =>
 
 
 function modificaPares(array, funcionAnonima) {
-  let pares = palabras.map(funcionAnonima);
-  for (elemento in array) {
+  let pares = array.map(funcionAnonima);
+  let nuevoArray = Array.from(array);
+  for (elemento in nuevoArray) {
     if (elemento % 2 !== 0) {
-      array[elemento] = pares[elemento];
+      nuevoArray[elemento] = pares[elemento];
     }
   }
-  return array;
+  return nuevoArray;
 }
 
 console.log(`${palabrasParesModificadas}`);
